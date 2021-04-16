@@ -1,0 +1,11 @@
+#=========ADDED_AUTOMATICALLY=============
+.idea
+.eclipse
+.config
+.vscode
+.settings
+*.pyc
+__pycache__
+venv
+.mypy_cache
+.pytest_cache
