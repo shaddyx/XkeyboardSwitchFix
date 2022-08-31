@@ -1,6 +1,9 @@
 import logging
 import os
+import sys
 
+import conf
+import layouts
 from hk import HK
 
 logging.basicConfig(level=logging.INFO)
@@ -9,11 +12,16 @@ import typing
 from pynput import keyboard
 from pynput.keyboard import Key, KeyCode
 
+config = conf.load()
+logging.info("Number of layouts: {}".format(layouts.get_count()))
+logging.info("Config: {}".format(config))
+logging.info("Variants: {}".format(layouts.get_variants_filtered()))
+sys.exit()
 def left():
-    os.system("./xkblayout-state set -1")
+    layouts.right()
 
 def right():
-    os.system("./xkblayout-state set +1")
+    layouts.left()
 
 hotkeys:typing.List[HK] = [
     HK([Key.ctrl, Key.shift], left),
