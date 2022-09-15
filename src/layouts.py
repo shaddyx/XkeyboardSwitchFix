@@ -1,3 +1,5 @@
+import functools
+
 import sys_util
 
 def run_args(*args):
@@ -10,6 +12,7 @@ def run_args(*args):
 def get_count():
     return run_args("print", "%C")
 
+@functools.cache
 def get_variants():
     return run_args("print","%S").strip().split("\n")
 
@@ -18,6 +21,8 @@ def get_variants_filtered():
     res = filter(lambda x: x != 'terminate', res)
     return list(res)
 
+def set_number(param):
+    return run_args("set", "{}".format(param))
 
 def left(param = 1):
     return run_args("set", "-{}".format(param))
@@ -25,3 +30,7 @@ def left(param = 1):
 
 def right(param = 1):
     return run_args("set", "+{}".format(param))
+
+def switch_to(layout: str):
+    idx = get_variants().index(layout)
+    return set_number(idx)
