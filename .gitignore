@@ -9,3 +9,6 @@ __pycache__
 venv
 .mypy_cache
 .pytest_cache
+build
+dist
+*.spec
