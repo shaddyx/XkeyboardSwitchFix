@@ -1,6 +1,0 @@
-altgraph==0.17.2
-evdev==1.6.0
-pyinstaller
-pynput==1.7.3
-python-xlib==0.31
-six==1.16.0

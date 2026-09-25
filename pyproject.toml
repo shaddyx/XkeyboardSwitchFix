@@ -1,0 +1,18 @@
+[project]
+name = "xkeyboard-switch-fix"
+version = "0.1.0"
+description = "Keyboard layout switcher fix for X11 (hotkeys driving xkblayout-state)"
+requires-python = ">=3.10"
+dependencies = [
+    "evdev>=1.6.0",
+    "pynput>=1.7.3",
+    "python-xlib>=0.31",
+]
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.0",
+]
+
+[tool.uv]
+package = false

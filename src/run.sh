@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
-my_dir=$(dirname $(readlink -f $0))
-cd $my_dir
-python3 main.py
+cd "$(dirname "$(readlink -f "$0")")"
+exec uv run python main.py
